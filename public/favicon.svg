@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <radialGradient id="paper" cx="30%" cy="25%" r="80%">
+      <stop offset="0%" stop-color="#FBF3E2"/>
+      <stop offset="100%" stop-color="#EFDFBF"/>
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#paper)"/>
+  <!-- washi tape corner -->
+  <rect x="-4" y="6" width="22" height="8" transform="rotate(-18 7 10)" fill="#F6D365" opacity="0.9"/>
+  <!-- leaf -->
+  <path d="M14 46 C 22 24, 42 20, 52 30 C 44 46, 26 52, 14 46 Z" fill="#8AA579" opacity="0.3"/>
+  <path d="M14 46 C 22 24, 42 20, 52 30" fill="none" stroke="#5E7A50" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- hand-drawn R -->
+  <path d="M22 44 L22 22 Q22 20 24 20 L34 20 Q40 20 40 26 Q40 32 34 32 L24 32 M32 32 L40 44"
+        fill="none" stroke="#2B2014" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- tangerine underline -->
+  <path d="M18 52 Q 30 49, 46 52" fill="none" stroke="#E85D23" stroke-width="2.4" stroke-linecap="round"/>
+</svg>
