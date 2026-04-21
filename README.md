@@ -1,34 +1,24 @@
 <div align="center">
   <br/>
-  <img src="./public/favicon.svg" width="96" height="96" alt="study room"/>
-
+  <img src="./public/favicon.svg" width="72" height="72" alt="study room"/>
   <h1>RJ's study room</h1>
-
-  <p><strong>A warm, mobile-first study companion for the Florida Electrology, Laser &amp; IPL retake.</strong></p>
-
-  <p>Flashcards, quizzes, a five-day plan, and a pep talk on demand — pocket-sized and entirely offline after the first visit.</p>
-
-  <br/>
-
   <p>
-    <a href="https://psychebear.github.io/study-room/">
-      <img alt="live site" src="https://img.shields.io/badge/live-psychebear.github.io%2Fstudy--room-E85D23?style=for-the-badge&logoColor=white"/>
-    </a>
-    <a href="https://github.com/PsycheBear/study-room/actions/workflows/deploy.yml">
-      <img alt="deploy status" src="https://img.shields.io/github/actions/workflow/status/PsycheBear/study-room/deploy.yml?branch=main&style=for-the-badge&label=pages&color=8AA579"/>
-    </a>
-    <a href="#stack">
-      <img alt="react 18" src="https://img.shields.io/badge/React-18-2B2014?style=for-the-badge&logo=react&logoColor=8AA579"/>
-    </a>
-    <a href="#stack">
-      <img alt="typescript" src="https://img.shields.io/badge/TypeScript-strict-2B2014?style=for-the-badge&logo=typescript&logoColor=E85D23"/>
-    </a>
+    <strong>A warm, mobile-first study companion for the Florida Electrology, Laser &amp; IPL retake.</strong><br/>
+    Flashcards, quizzes, a five-day plan, and a pep talk on demand — pocket-sized and entirely offline after the first visit.
   </p>
-
+  <p>
+    <a href="https://psychebear.github.io/study-room/"><img alt="live site" src="https://img.shields.io/badge/visit%20the%20live%20site%20%E2%86%92-E85D23?style=for-the-badge&labelColor=E85D23"/></a>
+    &nbsp;
+    <a href="https://github.com/PsycheBear/study-room/actions/workflows/deploy.yml"><img alt="pages deploy" src="https://img.shields.io/github/actions/workflow/status/PsycheBear/study-room/deploy.yml?branch=main&style=for-the-badge&label=pages&labelColor=2B2014&color=8AA579"/></a>
+  </p>
+  <p>
+    <img alt="react 18" src="https://img.shields.io/badge/React-18-8AA579?style=flat-square&labelColor=2B2014&logo=react&logoColor=8AA579"/>
+    <img alt="typescript" src="https://img.shields.io/badge/TypeScript-strict-E85D23?style=flat-square&labelColor=2B2014&logo=typescript&logoColor=E85D23"/>
+    <img alt="tailwind v3" src="https://img.shields.io/badge/Tailwind-v3-8AA579?style=flat-square&labelColor=2B2014&logo=tailwindcss&logoColor=8AA579"/>
+    <img alt="vite" src="https://img.shields.io/badge/Vite-bundler-E85D23?style=flat-square&labelColor=2B2014&logo=vite&logoColor=E85D23"/>
+  </p>
   <br/>
-
-  <em>Warmth &gt; polish. Personality &gt; professionalism.</em>
-
+  <sub><em>Warmth over polish. Personality over professionalism.</em></sub>
   <br/>
   <br/>
 </div>
