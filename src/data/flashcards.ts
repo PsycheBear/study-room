@@ -1,0 +1,317 @@
+export type Flashcard = {
+  id: string;
+  topic: string;
+  front: string;
+  back: string;
+};
+
+export const flashcards: Flashcard[] = [
+  {
+    id: 'fc01',
+    topic: 'Anatomy',
+    front: 'Anagen',
+    back: 'Active hair growth phase. Highest melanin concentration — best laser absorption.',
+  },
+  {
+    id: 'fc02',
+    topic: 'Anatomy',
+    front: 'Catagen',
+    back: 'Transitional phase. Follicle shrinks, hair stops growing. ~2 weeks.',
+  },
+  {
+    id: 'fc03',
+    topic: 'Anatomy',
+    front: 'Telogen',
+    back: "Resting phase. Hair sits in follicle but doesn't grow. Poor laser target.",
+  },
+  {
+    id: 'fc04',
+    topic: 'Anatomy',
+    front: 'Exogen',
+    back: 'Shedding phase — the old hair releases from the follicle while a new anagen hair begins beneath it.',
+  },
+  {
+    id: 'fc05',
+    topic: 'Anatomy',
+    front: 'Fitzpatrick I',
+    back: 'Very fair skin, always burns, never tans. Red / blonde hair common.',
+  },
+  {
+    id: 'fc06',
+    topic: 'Anatomy',
+    front: 'Fitzpatrick II',
+    back: 'Fair skin, usually burns, tans minimally. Blonde or light brown hair, blue / green eyes.',
+  },
+  {
+    id: 'fc07',
+    topic: 'Anatomy',
+    front: 'Fitzpatrick III',
+    back: 'Cream / olive tone. Sometimes burns, gradually tans. Classic "average Western European" response.',
+  },
+  {
+    id: 'fc08',
+    topic: 'Anatomy',
+    front: 'Fitzpatrick IV',
+    back: 'Olive / light brown. Rarely burns, tans readily. Mediterranean, Middle Eastern, many Latin skin tones.',
+  },
+  {
+    id: 'fc09',
+    topic: 'Anatomy',
+    front: 'Fitzpatrick V',
+    back: 'Brown skin. Very rarely burns, tans darkly. Higher PIH risk — treat conservatively, Nd:YAG preferred.',
+  },
+  {
+    id: 'fc10',
+    topic: 'Anatomy',
+    front: 'Fitzpatrick VI',
+    back: 'Darkest skin. Never burns. Nd:YAG (1064 nm) is the safest wavelength.',
+  },
+  {
+    id: 'fc11',
+    topic: 'Energy',
+    front: 'Nd:YAG wavelength',
+    back: '1064 nm. Deepest penetration, safest for Fitzpatrick IV–VI.',
+  },
+  {
+    id: 'fc12',
+    topic: 'Energy',
+    front: 'Alexandrite wavelength',
+    back: '755 nm. Best for Fitzpatrick I–III with fine hair.',
+  },
+  {
+    id: 'fc13',
+    topic: 'Energy',
+    front: 'Diode wavelength',
+    back: '810 nm. Middle-ground; works across most skin types.',
+  },
+  {
+    id: 'fc14',
+    topic: 'Energy',
+    front: 'TRT',
+    back: 'Thermal Relaxation Time: time for target to dissipate 50% of absorbed heat. Pulse < TRT = heat confined to target.',
+  },
+  {
+    id: 'fc15',
+    topic: 'Energy',
+    front: 'Primary chromophore',
+    back: 'Melanin. Selective photothermolysis targets it in the hair shaft and follicle.',
+  },
+  {
+    id: 'fc16',
+    topic: 'Energy',
+    front: 'Selective photothermolysis',
+    back: 'Match wavelength to chromophore + pulse duration < TRT → heat destroys target while sparing surrounding tissue.',
+  },
+  {
+    id: 'fc17',
+    topic: 'Energy',
+    front: 'Fluence',
+    back: 'Energy delivered per unit area, measured in J/cm². Higher fluence = more destruction, more collateral risk.',
+  },
+  {
+    id: 'fc18',
+    topic: 'Energy',
+    front: 'Spot size',
+    back: 'Diameter of the laser beam at the skin. Larger spot = deeper penetration at the same fluence, less scatter.',
+  },
+  {
+    id: 'fc19',
+    topic: 'Energy',
+    front: 'Pulse duration',
+    back: 'How long the laser is on target. Coarser hair = longer pulse; finer hair = shorter pulse. Keep under the TRT of skin.',
+  },
+  {
+    id: 'fc20',
+    topic: 'Energy',
+    front: 'Melanin absorption peaks',
+    back: 'Absorption declines as wavelength rises. Highest in visible light (~500–700 nm), lower but still useful at 1064 nm — where Nd:YAG wins the safety tradeoff.',
+  },
+  {
+    id: 'fc21',
+    topic: 'Energy',
+    front: 'IPL vs laser',
+    back: 'IPL = broadband, filtered flashlamp — cheaper, less precise, best on light skin / dark hair. Laser = single wavelength, more targeted.',
+  },
+  {
+    id: 'fc22',
+    topic: 'Infection Control',
+    front: 'Autoclave parameters',
+    back: '121°C at 15 psi for 15–30 minutes. Standard steam sterilization.',
+  },
+  {
+    id: 'fc23',
+    topic: 'Infection Control',
+    front: 'Spore test frequency',
+    back: 'Weekly minimum. Biological indicator verifies sterilization actually kills resistant organisms.',
+  },
+  {
+    id: 'fc24',
+    topic: 'Infection Control',
+    front: 'Universal precautions',
+    back: 'Treat all bodily fluids as potentially infectious. Every client. Every time. OSHA mandate.',
+  },
+  {
+    id: 'fc25',
+    topic: 'Infection Control',
+    front: 'Sharps disposal',
+    back: 'Drop used needles straight into an OSHA-compliant sharps container at point of use. Never recap. Replace container at ¾ full.',
+  },
+  {
+    id: 'fc26',
+    topic: 'Infection Control',
+    front: 'Four steps of sterilization',
+    back: 'Cleaning → packaging → sterilization → storage. Break the chain at any step and the protocol fails.',
+  },
+  {
+    id: 'fc27',
+    topic: 'Clinical / Legal',
+    front: 'Four pillars of consent',
+    back: 'Risks. Benefits. Alternatives. Right to refuse. In writing.',
+  },
+  {
+    id: 'fc28',
+    topic: 'Clinical / Legal',
+    front: 'FL supervising physician',
+    back: 'Electrologists performing laser / IPL work under an MD or DO with active license and joint written protocols on file.',
+  },
+  {
+    id: 'fc29',
+    topic: 'Clinical / Legal',
+    front: 'FL Statute 477',
+    back: "Florida's Cosmetology chapter — scope, licensure, discipline. Electrology sits adjacent; know what crosses the line into cosmetology vs. medical practice.",
+  },
+  {
+    id: 'fc30',
+    topic: 'Clinical / Legal',
+    front: 'HIPAA in the salon',
+    back: 'Client records are protected health information. Store them locked or encrypted, limit access, and never discuss a client by name where others can hear.',
+  },
+  {
+    id: 'fc31',
+    topic: 'Clinical / Legal',
+    front: 'PIH',
+    back: 'Post-Inflammatory Hyperpigmentation. Darker patches after treatment — highest risk in Fitzpatrick IV–VI. Prevent with conservative settings + aggressive sun protection.',
+  },
+  {
+    id: 'fc32',
+    topic: 'Clinical / Legal',
+    front: 'Contraindications',
+    back: 'Pregnancy, active infection (herpes, impetigo), photosensitising meds (isotretinoin, tetracyclines), recent sun exposure, melasma in active flare.',
+  },
+  {
+    id: 'fc33',
+    topic: 'Clinical / Legal',
+    front: 'Patch testing',
+    back: 'Spot-test each new client 24–48 h before full treatment. Start at the conservative end of the settings matrix for that skin type.',
+  },
+  {
+    id: 'fc34',
+    topic: 'Clinical / Legal',
+    front: 'Documentation',
+    back: "Record settings, fluence, pulse width, spot size, skin response, and client-reported discomfort every session. If it isn't written down, it didn't happen.",
+  },
+  {
+    id: 'fc35',
+    topic: 'Clinical / Legal',
+    front: 'Aftercare basics',
+    back: 'Cool compress post-treatment, broad-spectrum SPF 30+ daily, no picking, no waxing / plucking between sessions, no hot showers for 24 h.',
+  },
+  // —— Infection Control, deeper ————————————————————————————
+  {
+    id: 'fc36',
+    topic: 'Infection Control',
+    front: 'Cleaning vs disinfection vs sterilization',
+    back: 'Cleaning removes soil. Disinfection kills most microbes. Sterilization kills every microbe, spores included.',
+  },
+  {
+    id: 'fc37',
+    topic: 'Infection Control',
+    front: 'Hand-wash duration',
+    back: 'At least 20 seconds of active lathering with soap and water. Sing the chorus, not the verse.',
+  },
+  {
+    id: 'fc38',
+    topic: 'Infection Control',
+    front: 'Doffing order',
+    back: 'Gloves → goggles → gown → mask. Most-contaminated first. Hand-hygiene between steps and at the end.',
+  },
+  {
+    id: 'fc39',
+    topic: 'Infection Control',
+    front: 'Positive spore test',
+    back: 'Quarantine the autoclave, recall loads since the last negative test, re-sterilize, investigate, re-test before returning to service.',
+  },
+  {
+    id: 'fc40',
+    topic: 'Infection Control',
+    front: 'Surface disinfection',
+    back: 'EPA-registered, kept visibly wet for the full labeled contact time between clients. Not a quick wipe — a timed soak.',
+  },
+  {
+    id: 'fc41',
+    topic: 'Infection Control',
+    front: 'High-level disinfectants',
+    back: 'Glutaraldehyde, OPA, peracetic acid. For heat-sensitive semi-critical items that touch non-intact skin / mucosa — not for surfaces.',
+  },
+  {
+    id: 'fc42',
+    topic: 'Infection Control',
+    front: 'Needlestick: first move',
+    back: 'Encourage bleeding, wash thoroughly with soap and running water, report per exposure protocol for source testing and PEP decisions.',
+  },
+  {
+    id: 'fc43',
+    topic: 'Infection Control',
+    front: 'Contaminated linens',
+    back: 'Bag at point of use, never shake, wash in hot water, dry fully. Shaking aerosolises contaminants; sorting belongs in the laundry area, not the room.',
+  },
+  // —— Clinical / Legal, deeper —————————————————————————————
+  {
+    id: 'fc44',
+    topic: 'Clinical / Legal',
+    front: 'Isotretinoin washout',
+    back: 'Six months off isotretinoin before energy-based procedures is the mainstream standard. Shorter = supervising-physician sign-off only.',
+  },
+  {
+    id: 'fc45',
+    topic: 'Clinical / Legal',
+    front: 'Minors and consent',
+    back: 'A parent or legal guardian signs consent. The minor\'s assent is documented alongside — not in place of.',
+  },
+  {
+    id: 'fc46',
+    topic: 'Clinical / Legal',
+    front: 'HIPAA minimum necessary',
+    back: 'Use or share only the PHI needed to finish the task. Full chart stays in the drawer unless the full chart is genuinely required.',
+  },
+  {
+    id: 'fc47',
+    topic: 'Clinical / Legal',
+    front: 'FL Chapter 478',
+    back: 'Florida\'s Electrolysis chapter — defines scope, licensure, and discipline for electrologists. This is the one to read front to back.',
+  },
+  {
+    id: 'fc48',
+    topic: 'Clinical / Legal',
+    front: 'Record retention (FL)',
+    back: 'Five years is the typical floor for medical records in Florida; many practices hold seven to sit above malpractice windows. Minor-client records run longer.',
+  },
+  {
+    id: 'fc49',
+    topic: 'Clinical / Legal',
+    front: 'Photo consent',
+    back: 'A separate written consent — clinical vs. marketing, duration, right to withdraw. Never repurpose a chart photo for social media.',
+  },
+  {
+    id: 'fc50',
+    topic: 'Clinical / Legal',
+    front: 'Adverse event protocol',
+    back: 'Stop. Stabilize per protocol. Escalate to the supervising physician. Document completely — never alter or delete chart notes.',
+  },
+  {
+    id: 'fc51',
+    topic: 'Clinical / Legal',
+    front: 'Laser eyewear',
+    back: 'Wavelength- and OD-specific. 755 nm goggles are not interchangeable with 1064 nm. Verify both numbers before every session.',
+  },
+];
