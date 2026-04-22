@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useState } from 'react';
 import { flashcards as source, type Flashcard } from '../data/flashcards';
+import type { TopicKey } from '../data/topics';
 import { shuffle } from '../lib/utils';
 import { useLocalStorage } from './useLocalStorage';
 import { KEYS } from '../lib/storageKeys';
@@ -13,6 +14,7 @@ export function useFlashcards() {
     [],
   );
   const [filter, setFilter] = useState<FlashFilter>('all');
+  const [topicFilter, setTopicFilter] = useState<TopicKey | null>(null);
   const [order, setOrder] = useState<Flashcard[]>(source);
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
@@ -20,10 +22,12 @@ export function useFlashcards() {
   const knownSet = useMemo(() => new Set(known), [known]);
 
   const visible = useMemo(() => {
-    if (filter === 'known') return order.filter((c) => knownSet.has(c.id));
-    if (filter === 'unknown') return order.filter((c) => !knownSet.has(c.id));
-    return order;
-  }, [filter, knownSet, order]);
+    let list = order;
+    if (topicFilter) list = list.filter((c) => c.topic === topicFilter);
+    if (filter === 'known') return list.filter((c) => knownSet.has(c.id));
+    if (filter === 'unknown') return list.filter((c) => !knownSet.has(c.id));
+    return list;
+  }, [filter, topicFilter, knownSet, order]);
 
   const safeIndex = Math.min(index, Math.max(visible.length - 1, 0));
   const current = visible[safeIndex];
@@ -78,6 +82,12 @@ export function useFlashcards() {
     setFlipped(false);
   }, []);
 
+  const changeTopicFilter = useCallback((t: TopicKey | null) => {
+    setTopicFilter(t);
+    setIndex(0);
+    setFlipped(false);
+  }, []);
+
   const totalKnown = knownSet.size;
   const totalAll = source.length;
 
@@ -87,6 +97,7 @@ export function useFlashcards() {
     index: safeIndex,
     flipped,
     filter,
+    topicFilter,
     knownSet,
     totalKnown,
     totalAll,
@@ -96,5 +107,6 @@ export function useFlashcards() {
     toggleKnown,
     shuffleDeck,
     changeFilter,
+    changeTopicFilter,
   };
 }

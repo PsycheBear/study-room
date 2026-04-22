@@ -1,5 +1,8 @@
+export type TopicKey = 'Anatomy' | 'Infection Control' | 'Clinical / Legal' | 'Energy';
+
 export type Topic = {
   id: string;
+  key: TopicKey;
   title: string;
   tag: string;
   points: string[];
@@ -8,6 +11,7 @@ export type Topic = {
 export const topics: Topic[] = [
   {
     id: '01',
+    key: 'Anatomy',
     title: 'Anatomy & Physiology of Skin and Hair',
     tag: 'Foundations',
     points: [
@@ -18,6 +22,7 @@ export const topics: Topic[] = [
   },
   {
     id: '02',
+    key: 'Infection Control',
     title: 'Infection Control & Safety Precautions',
     tag: 'Heavy lifter',
     points: [
@@ -28,6 +33,7 @@ export const topics: Topic[] = [
   },
   {
     id: '03',
+    key: 'Clinical / Legal',
     title: 'Clinical Observations + Professional / Ethical / Legal',
     tag: 'Florida-specific',
     points: [
@@ -38,6 +44,7 @@ export const topics: Topic[] = [
   },
   {
     id: '04',
+    key: 'Energy',
     title: 'Basic Principles of Energy & Light-Based Devices',
     tag: 'Physics',
     points: [

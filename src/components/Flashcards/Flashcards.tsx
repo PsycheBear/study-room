@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect } from 'react';
 import { Section } from '../Section';
 import { useFlashcards } from '../../hooks/useFlashcards';
+import type { TopicKey } from '../../data/topics';
 import { Flashcard } from './Flashcard';
 import { FlashcardControls } from './FlashcardControls';
 
@@ -12,6 +13,7 @@ export function Flashcards() {
     index,
     flipped,
     filter,
+    topicFilter,
     knownSet,
     totalKnown,
     totalAll,
@@ -21,6 +23,7 @@ export function Flashcards() {
     toggleKnown,
     shuffleDeck,
     changeFilter,
+    changeTopicFilter,
   } = useFlashcards();
 
   useEffect(() => {
@@ -36,7 +39,11 @@ export function Flashcards() {
     section?.addEventListener('keydown', handler);
 
     const onGo = (e: Event) => {
-      const detail = (e as CustomEvent<{ filter: 'all' | 'unknown' | 'known' | null }>).detail;
+      const detail = (e as CustomEvent<{
+        filter: 'all' | 'unknown' | 'known' | null;
+        topic?: TopicKey | null;
+      }>).detail;
+      if (detail?.topic !== undefined) changeTopicFilter(detail.topic);
       if (detail?.filter) changeFilter(detail.filter);
     };
     window.addEventListener('studyroom:go-flashcards', onGo);
@@ -45,7 +52,7 @@ export function Flashcards() {
       section?.removeEventListener('keydown', handler);
       window.removeEventListener('studyroom:go-flashcards', onGo);
     };
-  }, [next, prev, flip, changeFilter]);
+  }, [next, prev, flip, changeFilter, changeTopicFilter]);
 
   return (
     <Section
@@ -93,6 +100,8 @@ export function Flashcards() {
         <FlashcardControls
           filter={filter}
           onFilter={changeFilter}
+          topicFilter={topicFilter}
+          onTopicFilter={changeTopicFilter}
           onPrev={prev}
           onNext={next}
           onShuffle={shuffleDeck}

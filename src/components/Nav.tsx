@@ -58,6 +58,12 @@ export function Nav() {
       className="sticky top-0 z-40 w-full border-b border-ink/5 bg-paper/70 backdrop-blur-md"
       aria-label="Primary"
     >
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-2 focus:z-50 focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-paper"
+      >
+        Skip to main content
+      </a>
       <div className="mx-auto flex max-w-3xl items-center justify-between gap-4 px-4 py-2.5 sm:px-6">
         <button
           type="button"

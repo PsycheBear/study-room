@@ -2,7 +2,6 @@ export const KEYS = {
   quizHistory: 'studyroom:quiz-history',
   flashcardsKnown: 'studyroom:flashcards-known',
   lastVisit: 'studyroom:last-visit',
-  letterSeen: 'studyroom:letter-seen',
   planDone: 'studyroom:plan-done',
   planWeekStart: 'studyroom:plan-week-start',
 } as const;

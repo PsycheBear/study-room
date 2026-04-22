@@ -9,6 +9,7 @@ export function Pep() {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(() => Math.floor(Math.random() * pep.length));
   const closeBtn = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
 
   const next = useCallback(() => {
     setIndex((i) => {
@@ -24,7 +25,25 @@ export function Pep() {
     document.body.style.overflow = 'hidden';
     closeBtn.current?.focus();
     const handler = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setOpen(false);
+      if (e.key === 'Escape') {
+        setOpen(false);
+        return;
+      }
+      if (e.key !== 'Tab' || !dialogRef.current) return;
+      const focusables = dialogRef.current.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      );
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      const active = document.activeElement as HTMLElement | null;
+      if (e.shiftKey && active === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault();
+        first.focus();
+      }
     };
     window.addEventListener('keydown', handler);
     return () => {
@@ -85,6 +104,7 @@ export function Pep() {
               onClick={() => setOpen(false)}
             />
             <motion.div
+              ref={dialogRef}
               role="dialog"
               aria-modal="true"
               aria-labelledby="pep-title"
@@ -139,6 +159,9 @@ export function Pep() {
                 >
                   Back to it
                 </button>
+                <span className="ml-auto hidden text-xs text-ink-faded sm:inline">
+                  Esc to close
+                </span>
               </div>
             </motion.div>
           </motion.div>
