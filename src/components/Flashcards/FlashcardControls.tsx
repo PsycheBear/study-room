@@ -1,10 +1,13 @@
 import { ChevronLeft, ChevronRight, Shuffle } from 'lucide-react';
 import type { FlashFilter } from '../../hooks/useFlashcards';
+import type { TopicKey } from '../../data/topics';
 import { cn } from '../../lib/utils';
 
 type Props = {
   filter: FlashFilter;
   onFilter: (f: FlashFilter) => void;
+  topicFilter: TopicKey | null;
+  onTopicFilter: (t: TopicKey | null) => void;
   onPrev: () => void;
   onNext: () => void;
   onShuffle: () => void;
@@ -21,9 +24,19 @@ const TABS: { key: FlashFilter; label: string }[] = [
   { key: 'known', label: 'Known' },
 ];
 
+const TOPIC_TABS: { key: TopicKey | null; label: string }[] = [
+  { key: null, label: 'All topics' },
+  { key: 'Anatomy', label: 'Anatomy' },
+  { key: 'Infection Control', label: 'Infection' },
+  { key: 'Clinical / Legal', label: 'Clinical' },
+  { key: 'Energy', label: 'Energy' },
+];
+
 export function FlashcardControls({
   filter,
   onFilter,
+  topicFilter,
+  onTopicFilter,
   onPrev,
   onNext,
   onShuffle,
@@ -35,6 +48,27 @@ export function FlashcardControls({
 }: Props) {
   return (
     <div className="flex flex-col gap-4">
+      <div className="no-scrollbar -mx-1 flex items-center gap-1.5 overflow-x-auto px-1">
+        {TOPIC_TABS.map((t) => {
+          const active = t.key === topicFilter;
+          return (
+            <button
+              key={t.label}
+              type="button"
+              onClick={() => onTopicFilter(t.key)}
+              className={cn(
+                'flex-none rounded-full border px-3.5 py-1.5 text-[12px] font-medium transition-colors min-h-[36px]',
+                active
+                  ? 'border-tangerine bg-tangerine-light/60 text-ink'
+                  : 'border-ink/10 bg-paper text-ink-soft',
+              )}
+            >
+              {t.label}
+            </button>
+          );
+        })}
+      </div>
+
       <div className="flex items-center justify-between gap-3">
         <div className="flex items-center gap-1 rounded-full border border-ink/10 bg-paper p-1">
           {TABS.map((t) => {

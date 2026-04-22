@@ -10,6 +10,7 @@ import { Plan } from './components/Plan';
 import { Pep } from './components/Pep';
 import { BookExam } from './components/BookExam';
 import { Footer } from './components/Footer';
+import { ErrorBoundary } from './components/ErrorBoundary';
 import { KEYS } from './lib/storageKeys';
 import { writeLS } from './hooks/useLocalStorage';
 
@@ -21,17 +22,19 @@ function App() {
   return (
     <div className="relative min-h-screen">
       <Nav />
-      <main>
-        <Hero />
-        <Letter />
-        <Topics />
-        <Videos />
-        <Quiz />
-        <Flashcards />
-        <Plan />
-        <Pep />
-        <BookExam />
-      </main>
+      <ErrorBoundary>
+        <main id="main" tabIndex={-1} className="outline-none">
+          <Hero />
+          <Letter />
+          <Topics />
+          <Videos />
+          <Quiz />
+          <Flashcards />
+          <Plan />
+          <Pep />
+          <BookExam />
+        </main>
+      </ErrorBoundary>
       <Footer />
     </div>
   );

@@ -16,9 +16,12 @@ export function goToQuiz(focus: QuizFocus = null, autostart = false) {
   );
 }
 
-export function goToFlashcards(filter: FlashFilter | null = null) {
+export function goToFlashcards(
+  filter: FlashFilter | null = null,
+  topic: Exclude<QuizFocus, null> | null = null,
+) {
   window.dispatchEvent(
-    new CustomEvent('studyroom:go-flashcards', { detail: { filter } }),
+    new CustomEvent('studyroom:go-flashcards', { detail: { filter, topic } }),
   );
 }
 
