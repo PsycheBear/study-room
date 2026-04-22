@@ -1,8 +1,17 @@
 import { useCallback, useMemo, useState } from 'react';
 import { questions as pool, type Question } from '../data/questions';
-import { pickN } from '../lib/utils';
+import { pickN, shuffle } from '../lib/utils';
 import { useLocalStorage } from './useLocalStorage';
 import { KEYS, type QuizSession } from '../lib/storageKeys';
+
+const shuffleOptions = (q: Question): Question => {
+  const order = shuffle(q.options.map((_, i) => i));
+  return {
+    ...q,
+    options: order.map((i) => q.options[i]),
+    correct: order.indexOf(q.correct),
+  };
+};
 
 export type AnswerRecord = { picked: number; correct: boolean };
 
@@ -41,7 +50,7 @@ export function useQuiz() {
     const source = filtered.length >= QUIZ_LEN ? filtered : pool;
     setState({
       active: true,
-      questions: pickN(source, QUIZ_LEN),
+      questions: pickN(source, QUIZ_LEN).map(shuffleOptions),
       index: 0,
       answers: [],
       finished: false,
