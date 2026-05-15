@@ -1,11 +1,21 @@
+<!-- animated waving banner: tangerine → sage on cream -->
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:F5EBD8,40:FAD6B5,80:8AA579,100:5E7A50&height=140&section=header&reversal=false" alt=""/>
+</p>
+
 <div align="center">
+  <img src="./public/favicon.svg" width="84" height="84" alt="study room"/>
   <br/>
-  <img src="./public/favicon.svg" width="72" height="72" alt="study room"/>
-  <h1>RJ's study room</h1>
-  <p>
-    <strong>A warm, mobile-first study companion for the Florida Electrology, Laser &amp; IPL retake.</strong><br/>
-    Flashcards, quizzes, a five-day plan, and a pep talk on demand — pocket-sized and entirely offline after the first visit.
-  </p>
+  <br/>
+  <!-- animated h1: handwritten-feel typing in ink -->
+  <a href="https://psychebear.github.io/study-room/">
+    <img src="https://readme-typing-svg.demolab.com?font=Fraunces&weight=600&size=46&duration=3800&pause=900&color=2B2014&center=true&vCenter=true&width=620&height=68&lines=RJ's+study+room" alt="RJ's study room"/>
+  </a>
+  <br/>
+  <!-- rotating taglines in tangerine -->
+  <img src="https://readme-typing-svg.demolab.com?font=Familjen+Grotesk&size=18&duration=2600&pause=800&color=E85D23&center=true&vCenter=true&width=640&height=32&lines=A+warm%2C+mobile-first+study+companion;Flashcards.+Quizzes.+A+five-day+plan.;Pep+talks+on+demand.;Pocket-sized+and+entirely+offline." alt=""/>
+  <br/>
+  <br/>
   <p>
     <a href="https://psychebear.github.io/study-room/"><img alt="live site" src="https://img.shields.io/badge/visit%20the%20live%20site%20%E2%86%92-E85D23?style=for-the-badge&labelColor=E85D23"/></a>
     &nbsp;
@@ -17,13 +27,15 @@
     <img alt="tailwind v3" src="https://img.shields.io/badge/Tailwind-v3-8AA579?style=flat-square&labelColor=2B2014&logo=tailwindcss&logoColor=8AA579"/>
     <img alt="vite" src="https://img.shields.io/badge/Vite-bundler-E85D23?style=flat-square&labelColor=2B2014&logo=vite&logoColor=E85D23"/>
   </p>
-  <br/>
   <sub><em>Warmth over polish. Personality over professionalism.</em></sub>
   <br/>
   <br/>
 </div>
 
----
+<!-- thin animated wave separator -->
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:E85D23,100:8AA579&height=2" alt=""/>
+</p>
 
 ## What's inside
 
@@ -129,10 +141,12 @@ study-room/
 └─ vite.config.ts                 # base: '/study-room/'
 ```
 
----
+<!-- animated waving footer -->
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8AA579,50:FAD6B5,100:F5EBD8&height=110&section=footer&reversal=true" alt=""/>
+</p>
 
 <div align="center">
-  <br/>
   <em>made with care · for round two</em>
   <br/>
   <br/>
